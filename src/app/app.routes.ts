@@ -23,11 +23,10 @@ export const routes: Routes = [
     {
       path: 'management',
       loadChildren: () =>
-        import('./modules/management/management.module').then(
+        import('./modules/management/pages/management/management.module').then(
           (m) => m.ManagementModule
         ), canActivate: [isAdminGuard] 
   },
-
 
   { path: 'error/:errorCode', component: ErrorComponent},
   { path: '**', component: ErrorComponent }
